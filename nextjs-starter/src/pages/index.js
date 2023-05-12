@@ -2,10 +2,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { getServerSideProps } from './ssr';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  async function handler() {
+    try {
+      const { data } = await getServerSideProps();
+      return { props: { data } };
+    } catch (error) {
+      console.error('getServerSideProps error:', error);
+      console.error('serialized data:', JSON.stringify(error, null, 2));
+      throw error;
+    }
+  }
+  // handler()
   return (
     <>
       <Head>
