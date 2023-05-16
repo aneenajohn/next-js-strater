@@ -1,13 +1,16 @@
 // import axios from 'axios';
 const SSR = ({ data }) => {
     console.log(data);
+    if(!data) {
+        return <p>Loading...</p>
+    }
     return (
         <div>
-            <p>{data.title}</p>
+            <p>Title: {data.title}</p>
             <br/>
-            <p>{data.description}</p>
+            <p>Description: {data.body}</p>
+            <br/>
         </div>
-        // <div>Hey {person}, Welcome to the party!</div>
     )
 }
 
