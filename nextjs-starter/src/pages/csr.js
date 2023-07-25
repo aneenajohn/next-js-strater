@@ -11,18 +11,12 @@ const CSR = () => {
     },[])
 
     return (
-        <>
-            {
-                data ? (
-                    <>
-                        <p>Title: {data.title}</p>
-                        <br/>
-                        <p>Description: {data.body}</p>
-                        <br/>
-                    </>
-                ) : <p>Loading...</p>
-            }
-        </>
+            <div className='page'>
+                <p><b>Title:</b> {data?.title}</p>
+                <br/>
+                <p><b>Description:</b> {data?.body}</p>
+                <br/>
+            </div>
     )
 }
 export default CSR;

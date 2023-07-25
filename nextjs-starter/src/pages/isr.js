@@ -1,16 +1,13 @@
 
 const ISR = ({data}) => {
-    console.log(data);
-    if(!data) {
-        return <p>Loading...</p>
-    }
+
     return (
-        <>
-            <p>Title: {data.title}</p>
+        <div className='page'>
+            <p>Title: {data?.title}</p>
             <br/>
-            <p>Description: {data.body}</p>
+            <p>Description: {data?.body}</p>
             <br/>
-        </>
+        </div>
     )
 }
 
